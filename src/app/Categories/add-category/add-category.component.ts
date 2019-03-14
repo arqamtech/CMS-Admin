@@ -10,18 +10,26 @@ import { CategoriesService } from 'src/app/Services/Categories/categories.servic
 })
 export class AddCategoryComponent implements OnInit {
 
-  constructor(    
+  constructor(
     private catSer: CategoriesService,
-    ) { 
+  ) {
 
-    }
+  }
 
   ngOnInit() {
   }
   onSubmit() {
     let data = this.catSer.newCategory.value;
-    this.catSer.addCategory(data).then(res => {
-      
-    });
+
+    if (this.catSer.newCategory.valid) {
+
+      this.catSer.addCategory(data).then(res => {
+
+      });
+    } else {
+      console.log("wrng Tag");
+
+    }
   }
 }
+

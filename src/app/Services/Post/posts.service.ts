@@ -5,40 +5,32 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class TagsService {
+export class PostsService {
 
   constructor(
     private firestore: AngularFirestore,
   ) {
   }
 
-  newTag = new FormGroup({
-    Name: new FormControl("", [
+  newPost = new FormGroup({
+    Title: new FormControl("", [
       Validators.required,
       Validators.minLength(4),
     ]),
-
-
   })
 
+  postAtt = new FormGroup({
+    Category: new FormControl(""),
+  })
 
-  addTag(data) {
+  addTitle(data) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
-        .collection("Tags")
+        .collection("Posts")
         .add(data)
         .then(res => { }, err => reject(err));
     });
   }
 
-  getTags() {
-    return this.firestore.collection("Tags").snapshotChanges();
-  }
 
-  deleteTags(data) {
-    return this.firestore
-      .collection("Tags")
-      .doc(data.payload.doc.id)
-      .delete();
-  }
 }

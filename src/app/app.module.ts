@@ -18,6 +18,8 @@ import { LoginComponent } from './Auth/login/login.component';
 import { AllPostsComponent } from './Post/all-posts/all-posts.component';
 import { AddCategoryComponent } from './Categories/add-category/add-category.component';
 import { ViewCategoryComponent } from './Categories/view-category/view-category.component';
+import { AddTagComponent } from './Tags/add-tag/add-tag.component';
+import { ViewTagsComponent } from './Tags/view-tags/view-tags.component';
 
 
 
@@ -33,6 +35,8 @@ import { ViewCategoryComponent } from './Categories/view-category/view-category.
     AllPostsComponent,
     AddCategoryComponent,
     ViewCategoryComponent,
+    AddTagComponent,
+    ViewTagsComponent,
   ],
   imports: [
     BrowserModule,
