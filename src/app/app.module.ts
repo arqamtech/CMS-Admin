@@ -7,12 +7,32 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { environment } from "src/environments/environment";
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { NewPostComponent } from './Post/new-post/new-post.component';
+import { CategoryComponent } from './Categories/category/category.component';
+import { ViewPostComponent } from './Post/view-post/view-post.component';
+import { TagsComponent } from './Tags/tags/tags.component';
+import { CategoriesService } from './Services/Categories/categories.service';
+import { TagsService } from './Services/Tags/tags.service';
+import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
+import { LoginComponent } from './Auth/login/login.component';
+import { AllPostsComponent } from './Post/all-posts/all-posts.component';
+import { AddCategoryComponent } from './Categories/add-category/add-category.component';
+import { ViewCategoryComponent } from './Categories/view-category/view-category.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewPostComponent,
+    CategoryComponent,
+    ViewPostComponent,
+    TagsComponent,
+    DashboardComponent,
+    LoginComponent,
+    AllPostsComponent,
+    AddCategoryComponent,
+    ViewCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +42,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFirestoreModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [
+    CategoriesService,
+    TagsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Categories</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of cats">
+      <td>{{c.payload.doc.data().Name}}</td>
+      <td>
+        <i class="material-icons waves-effect waves-light  small red-text" (click)="deleteCat(c)">delete</i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
