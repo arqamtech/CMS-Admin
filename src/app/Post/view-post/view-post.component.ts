@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PostsService } from 'src/app/Services/Post/posts.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-view-post',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPostComponent implements OnInit {
 
-  constructor() { }
+  postId;
+
+  constructor(
+    private route: ActivatedRoute,
+    private postServ: PostsService,
+    private firestore: AngularFirestore,
+  ) {
+
+  }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.postId = params['id'];
+    });
+    console.log(this.postId);
+    this.getPost();
   }
+
+  cPost;
+
+  getPost = () =>
+    this.postServ
+      .getPost(this.postId)
+      .subscribe(res => (this.cPost = res.data()));
+
+
+
 
 }

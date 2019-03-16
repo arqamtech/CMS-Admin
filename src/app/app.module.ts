@@ -20,6 +20,7 @@ import { AddCategoryComponent } from './Categories/add-category/add-category.com
 import { ViewCategoryComponent } from './Categories/view-category/view-category.component';
 import { AddTagComponent } from './Tags/add-tag/add-tag.component';
 import { ViewTagsComponent } from './Tags/view-tags/view-tags.component';
+import { EditPostComponent } from './Post/edit-post/edit-post.component';
 
 
 
@@ -37,6 +38,7 @@ import { ViewTagsComponent } from './Tags/view-tags/view-tags.component';
     ViewCategoryComponent,
     AddTagComponent,
     ViewTagsComponent,
+    EditPostComponent,
   ],
   imports: [
     BrowserModule,
