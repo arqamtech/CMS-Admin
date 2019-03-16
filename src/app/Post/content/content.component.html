@@ -1,0 +1,43 @@
+<form [formGroup]="heading1" novalidate (ngSubmit)="save(heading1)">
+
+  <div class="section">
+    <a class=" waves-effect waves-light btn" (click)="addHeading1()">Heading 1</a>
+    <a class=" waves-effect waves-light btn" (click)="addHeading2()">Heading 2</a>
+
+  </div>
+
+  <div formArrayName="psot">
+
+    <div *ngFor="let psot of heading1.controls.psot.controls; let i=index">
+
+      <div class="panel-body" [formGroupName]="i">
+        <div class="form-group col-xs-6">
+          <textarea placeholder="Heading 1" formControlName="heading1" class="materialize-textarea head1"></textarea>
+        </div>
+        <a class=" waves-effect right waves-light btn red" (click)="delHeading1(i)">Delete</a>
+
+      </div>
+
+      <div *ngFor="let psot of heading2.controls.psot.controls; let i=index">
+
+        <div class="panel-body" [formGroupName]="i">
+          <div class="form-group col-xs-6">
+            <textarea placeholder="Heading 2" formControlName="heading2" class="materialize-textarea head2"></textarea>
+          </div>
+          <a class=" waves-effect right waves-light btn red" (click)="delHeading1(i)">Delete</a>
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+</form>
+
+<pre>{{heading1.value | json}}</pre>

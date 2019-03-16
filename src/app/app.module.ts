@@ -21,6 +21,7 @@ import { ViewCategoryComponent } from './Categories/view-category/view-category.
 import { AddTagComponent } from './Tags/add-tag/add-tag.component';
 import { ViewTagsComponent } from './Tags/view-tags/view-tags.component';
 import { EditPostComponent } from './Post/edit-post/edit-post.component';
+import { ContentComponent } from './Post/content/content.component';
 
 
 
@@ -39,6 +40,7 @@ import { EditPostComponent } from './Post/edit-post/edit-post.component';
     AddTagComponent,
     ViewTagsComponent,
     EditPostComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
